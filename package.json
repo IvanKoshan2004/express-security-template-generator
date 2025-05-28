@@ -1,0 +1,33 @@
+{
+  "name": "express-security-template-generator",
+  "version": "1.0.0",
+  "description": "CLI інструмент для генерації Express-проекту з попередньо налаштованими модулями безпеки",
+  "bin": {
+    "express-security-template-generator": "./index.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "keywords": [
+    "express",
+    "security",
+    "template",
+    "generator",
+    "cli",
+    "npx",
+    "nodejs"
+  ],
+  "author": "Іван Кошан",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "execa": "^9.6.0",
+    "fs-extra": "^11.3.0",
+    "inquirer": "^12.6.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
