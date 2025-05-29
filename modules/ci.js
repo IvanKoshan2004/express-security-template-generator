@@ -13,16 +13,15 @@ export default new Module({
           templateName: "packageJson",
           injectionName: "devDependencies",
           value: {
-            "eslint": "^8.57.0",
-            "semgrep": "^1.72.0",
-            "eslint-plugin-security": "^1.7.1",
-            "eslint-plugin-no-secrets": "^0.8.8",
+            "eslint": "^9.27.0",
+            "eslint-plugin-no-secrets": "^2.2.1",
+            "eslint-plugin-security": "^3.0.1",
           },
         },
         {
           templateName: "packageJson",
           injectionName: "scripts",
-          value: { lint: "eslint . --ext .js", semgrep: "semgrep --config=auto ." },
+          value: { lint: "eslint . --ext .js" },
         },
         {
           templateName: "eslint",
@@ -58,11 +57,14 @@ export default new Module({
               ],
             },
             semgrep: {
+              "name": "semgrep/ci",
               "runs-on": "ubuntu-latest",
+              "container": {
+                image: "semgrep/semgrep",
+              },
               "steps": [
                 { name: "Checkout code", uses: "actions/checkout@v4" },
-                { name: "Install Semgrep", run: "pip install semgrep" },
-                { name: "Run Semgrep", run: "npm run semgrep" },
+                { name: "Run Semgrep CI", run: "semgrep ci", env: { SEMGREP_APP_TOKEN: "${{ secrets.SEMGREP_APP_TOKEN }}" } },
               ],
             },
             audit: {

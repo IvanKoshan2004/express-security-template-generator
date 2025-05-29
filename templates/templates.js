@@ -1,5 +1,5 @@
-import { aclTemplate } from "./fileTemplates/acl.js";
 import { appJsTemplate } from "./fileTemplates/app.js";
+import { caslTemplate } from "./fileTemplates/casl.js";
 import { cicdTemplate } from "./fileTemplates/cicd.js";
 import { envTemplate } from "./fileTemplates/env.js";
 import { eslintTemplate } from "./fileTemplates/eslint.js";
@@ -11,8 +11,8 @@ import { userRouterTemplate } from "./fileTemplates/routes.js";
 import { tlsTemplates } from "./fileTemplates/tls.js";
 
 export const templates = [
-  aclTemplate,
   appJsTemplate,
+  caslTemplate,
   cicdTemplate,
   envTemplate,
   eslintTemplate,
