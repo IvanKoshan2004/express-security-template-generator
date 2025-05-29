@@ -1,9 +1,9 @@
 {
-  "name": "express-security-template-generator",
-  "version": "1.0.0",
+  "name": "@ivankoshan2004/express-security-template-generator",
+  "version": "1.0.1",
   "description": "CLI інструмент для генерації Express-проекту з попередньо налаштованими модулями безпеки",
   "bin": {
-    "express-security-template-generator": "./index.js"
+    "express-security-template-generator": "index.js"
   },
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,8 @@
     "chalk": "^5.4.1",
     "execa": "^9.6.0",
     "fs-extra": "^11.3.0",
-    "inquirer": "^12.6.3"
+    "inquirer": "^12.6.3",
+    "js-yaml": "^4.1.0"
   },
   "engines": {
     "node": ">=18.0.0"
