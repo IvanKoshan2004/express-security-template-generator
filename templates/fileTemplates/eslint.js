@@ -2,35 +2,33 @@ import { Template } from "../Template.js";
 
 export const eslintTemplate = new Template({
   name: "eslint",
-  targetPath: "./.eslintrc.json",
+  targetPath: "./eslint.config.js",
   injectionDescriptors: [
     {
-      name: "eslintConfig",
-      defaultValue: {},
-      type: "object",
-    },
-    {
-      name: "eslintExtends",
-      defaultValue: ["eslint:recommended"],
-      type: "array",
-    },
-    {
-      name: "eslintPlugins",
-      defaultValue: [],
-      type: "array",
+      name: "file",
+      type: "string",
     },
   ],
-  template: `{
-  "env": {
-    "browser": true,
-    "es2021": true
+  template: `
+const security = require("eslint-plugin-security");
+
+module.exports = [
+  {
+    files: ["**/*.js"],
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+    },
+    plugins: {
+      security,
+    },
+    rules: {
+      ...security.configs.recommended.rules,,
+      "no-unused-vars": "warn",
+      "no-console": "off",
+      "semi": ["error", "always"],
+      "quotes": ["error", "double"],
+    },
   },
-  "extends": {{{eslintExtends}}},
-  "plugins": {{{eslintPlugins}}},
-  "parserOptions": {
-    "ecmaVersion": 12,
-    "sourceType": "module"
-  },
-  "rules": {{{eslintConfig}}}
-}`,
+];`,
 });
