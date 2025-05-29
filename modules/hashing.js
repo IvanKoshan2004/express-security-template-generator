@@ -37,15 +37,15 @@ export default new Module({
         {
           templateName: "passwordService",
           injectionName: "hashFunction",
-          value:
-            `\nconst saltRounds = parseInt(process.env.BCRYPT_SALT_ROUNDS, 10) || 10;\nreturn await bcrypt.hash(password, saltRounds);`.trim(),
+          value: `const saltRounds = parseInt(process.env.BCRYPT_SALT_ROUNDS, 10000) || 10000;
+return await bcrypt.hash(password, saltRounds);`.trim(),
         },
         {
           templateName: "passwordService",
           injectionName: "compareFunction",
           value: `\nreturn await bcrypt.compare(password, hash);`.trim(),
         },
-        { templateName: "packageJson", injectionName: "dependencies", value: { bcrypt: "^5.1.1" } },
+        { templateName: "packageJson", injectionName: "dependencies", value: { bcrypt: "^6.0.0" } },
         { templateName: "env", injectionName: "params", value: { BCRYPT_SALT_ROUNDS: "10000" } },
         ...commonInjectionItems,
       ],
@@ -60,7 +60,7 @@ export default new Module({
           injectionName: "compareFunction",
           value: `\nreturn await argon2.verify(hash, password);`.trim(),
         },
-        { templateName: "packageJson", injectionName: "dependencies", value: { argon2: "^0.32.3" } },
+        { templateName: "packageJson", injectionName: "dependencies", value: { argon2: "^0.43.0" } },
         ...commonInjectionItems,
       ],
     },

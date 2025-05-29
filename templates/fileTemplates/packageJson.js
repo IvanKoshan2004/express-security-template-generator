@@ -11,9 +11,7 @@ export const packageJsonTemplate = new Template({
     },
     {
       name: "scripts",
-      defaultValue: {
-        start: "node ./app.js",
-      },
+      defaultValue: {},
       type: "object",
     },
     {
