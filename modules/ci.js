@@ -14,7 +14,6 @@ export default new Module({
           injectionName: "devDependencies",
           value: {
             "eslint": "^9.27.0",
-            "eslint-plugin-no-secrets": "^2.2.1",
             "eslint-plugin-security": "^3.0.1",
           },
         },
@@ -25,23 +24,8 @@ export default new Module({
         },
         {
           templateName: "eslint",
-          injectionName: "eslintConfig",
-          value: {
-            "no-unused-vars": "warn",
-            "no-console": "off",
-            "semi": ["error", "always"],
-            "quotes": ["error", "double"],
-          },
-        },
-        {
-          templateName: "eslint",
-          injectionName: "eslintExtends",
-          value: ["plugin:security/recommended", "plugin:no-secrets/recommended"],
-        },
-        {
-          templateName: "eslint",
-          injectionName: "eslintPlugins",
-          value: ["security", "no-secrets"],
+          injectionName: "file",
+          value: true,
         },
         {
           templateName: "cicd",

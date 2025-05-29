@@ -1,6 +1,6 @@
 {
   "name": "@ivankoshan2004/express-security-template-generator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CLI інструмент для генерації Express-проекту з попередньо налаштованими модулями безпеки",
   "bin": {
     "express-security-template-generator": "index.js"
